@@ -214,7 +214,6 @@ async def incoming_compress_message_f(bot, update):
             DOWNLOAD_LOCATION,
             duration,
             bot,
-            sent_message,
             target_percentage,
             isAuto,
             compress_start
