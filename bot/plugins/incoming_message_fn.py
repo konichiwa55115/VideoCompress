@@ -59,25 +59,10 @@ async def incoming_start_message_f(bot, update):
    
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Localisation.START_TEXT,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
-                ],
-                [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
-                ]
-            ]
-        ),
-        reply_to_message_id=update.message_id,
-    )
-
+        text=Localisation.START_TEXT
 
 async def incoming_compress_message_f(bot, update):
     """/compress command"""
-    if not await db.is_user_exist(update.chat.id):
-        await db.add_user(update.chat.id)
    
     if update.reply_to_message is None:
         try:
