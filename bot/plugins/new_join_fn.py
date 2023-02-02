@@ -40,6 +40,4 @@ async def help_message_f(client, message):
     await message.reply_text(
         Localisation.HELP_MESSAGE,
      
-        ),
-        quote=True
-    )
+        )
