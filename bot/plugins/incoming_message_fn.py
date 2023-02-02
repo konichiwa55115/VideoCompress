@@ -248,7 +248,7 @@ async def incoming_compress_message_f(bot, update):
         if o == 'stopped':
             return
         if o is not None:
-            chat_id = LOG_CHANNEL
+           
             utc_now = datetime.datetime.utcnow()
             ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
             ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
@@ -256,8 +256,7 @@ async def incoming_compress_message_f(bot, update):
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
             await compress_start.delete()
-            upload_start = await bot.send_message(chat_id, f"**Uploading Video ...** \n\nProcess Started at `{now}`",
-                                                  parse_mode="markdown")
+           
             await sent_message.edit_text(
                 text=Localisation.UPLOAD_START,
             )
