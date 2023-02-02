@@ -205,7 +205,9 @@ async def incoming_compress_message_f(bot, update):
         now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
        
        
-        
+        await sent_message.edit_text(
+            text=Localisation.COMPRESS_START
+        )
         c_start = time.time()
         o = await convert_video(
             saved_file_path,
