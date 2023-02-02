@@ -17,7 +17,8 @@ import re
 import json
 import subprocess
 import math
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from bot.helper_funcs.display_progress import (
   TimeFormatter
 )
