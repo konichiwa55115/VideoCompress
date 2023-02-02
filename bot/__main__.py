@@ -8,7 +8,6 @@ import os
 from bot import (
     APP_ID,
     API_HASH,
-    AUTH_USERS,
     DOWNLOAD_LOCATION,
     LOGGER,
     TG_BOT_TOKEN,
@@ -67,35 +66,35 @@ if __name__ == "__main__" :
     # STATUS ADMIN Command
     incoming_status_command = MessageHandler(
         sts,
-        filters=filters.command(["status"]) & filters.user(AUTH_USERS)
+        filters=filters.command(["status"]) 
     )
     app.add_handler(incoming_status_command)
 
     # BAN Admin Command
     incoming_ban_command = MessageHandler(
         ban,
-        filters=filters.command(["ban_user"]) & filters.user(AUTH_USERS)
+        filters=filters.command(["ban_user"]) 
     )
     app.add_handler(incoming_ban_command)
 
     # UNBAN Admin Command
     incoming_unban_command = MessageHandler(
         unban,
-        filters=filters.command(["unban_user"]) & filters.user(AUTH_USERS)
+        filters=filters.command(["unban_user"]) 
     )
     app.add_handler(incoming_unban_command)
 
     # BANNED_USERS Admin Command
     incoming_banned_command = MessageHandler(
         _banned_usrs,
-        filters=filters.command(["banned_users"]) & filters.user(AUTH_USERS)
+        filters=filters.command(["banned_users"]) 
     )
     app.add_handler(incoming_banned_command)
 
     # BROADCAST Admin Command
     incoming_broadcast_command = MessageHandler(
         broadcast_,
-        filters=filters.command(["broadcast"]) & filters.user(AUTH_USERS) & filters.reply
+        filters=filters.command(["broadcast"]) &  filters.reply
     )
     app.add_handler(incoming_broadcast_command)
     
@@ -116,14 +115,14 @@ if __name__ == "__main__" :
     # CANCEL command
     incoming_cancel_message_handler = MessageHandler(
         incoming_cancel_message_f,
-        filters=filters.command(["cancel", f"cancel@{BOT_USERNAME}"]) & filters.chat(chats=AUTH_USERS)
+        filters=filters.command(["cancel", f"cancel@{BOT_USERNAME}"]) 
     )
     app.add_handler(incoming_cancel_message_handler)
 
     # MEMEs COMMANDs
     exec_message_handler = MessageHandler(
         exec_message_f,
-        filters=filters.command(["exec", f"exec@{BOT_USERNAME}"]) & filters.chat(chats=AUTH_USERS)
+        filters=filters.command(["exec", f"exec@{BOT_USERNAME}"]) 
     )
     app.add_handler(exec_message_handler)
     
@@ -137,7 +136,7 @@ if __name__ == "__main__" :
     # Telegram command to upload LOG files
     upload_log_f_handler = MessageHandler(
         upload_log_file,
-        filters=filters.command(["log", f"log@{BOT_USERNAME}"]) & filters.chat(chats=AUTH_USERS)
+        filters=filters.command(["log", f"log@{BOT_USERNAME}"]) 
     )
     app.add_handler(upload_log_f_handler)
     
