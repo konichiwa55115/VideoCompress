@@ -113,7 +113,7 @@ async def incoming_compress_message_f(bot, update):
     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
       
-        try:
+    try:
             d_start = time.time()
             status = DOWNLOAD_LOCATION + "/status.json"
             with open(status, 'w') as f:
