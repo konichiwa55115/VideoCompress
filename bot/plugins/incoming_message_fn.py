@@ -100,8 +100,7 @@ async def incoming_compress_message_f(bot, update):
     c_start = time.time()
     u_start = time.time()
     status = DOWNLOAD_LOCATION + "/status.json"
-    if not os.path.exists(status):
-        sent_message = await bot.send_message(
+    sent_message = await bot.send_message(
             chat_id=update.chat.id,
             text=Localisation.DOWNLOAD_START,
             reply_to_message_id=update.message_id
