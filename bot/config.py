@@ -33,7 +33,7 @@ class Config(object):
     DEF_THUMB_NAIL_VID_S = get_config("DEF_THUMB_NAIL_VID_S", "https://placehold.it/90x90")
     # proxy for accessing youtube-dl in GeoRestricted Areas
     # Get your own proxy from https://github.com/rg3/youtube-dl/issues/1091#issuecomment-230163061
-    HTTP_PROXY = get_config("HTTP_PROXY", 182.18.177.114:83)
+    HTTP_PROXY = get_config("HTTP_PROXY", "182.18.177.114:83")
     # maximum message length in Telegram
     MAX_MESSAGE_LENGTH = 4096
     # add config vars for the display progress
