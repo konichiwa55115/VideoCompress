@@ -106,12 +106,12 @@ async def incoming_compress_message_f(bot, update):
             reply_to_message_id=update.message_id
         )
       
-        utc_now = datetime.datetime.utcnow()
-        ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
-        ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
-        bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
-        bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
-        now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
+    utc_now = datetime.datetime.utcnow()
+    ist_now = utc_now + datetime.timedelta(minutes=30, hours=5)
+    ist = ist_now.strftime("%d/%m/%Y, %H:%M:%S")
+    bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
+    bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
+    now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
       
         try:
             d_start = time.time()
