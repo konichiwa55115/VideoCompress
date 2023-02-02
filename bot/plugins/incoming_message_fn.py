@@ -19,8 +19,6 @@ import os, time, asyncio, json
 from bot.localisation import Localisation
 from bot import (
     DOWNLOAD_LOCATION,
-    LOG_CHANNEL,
-    UPDATES_CHANNEL,
     DATABASE_URL,
     SESSION_NAME
 )
@@ -47,7 +45,7 @@ from bot.helper_funcs.utils import (
     delete_downloads
 )
 
-LOGS_CHANNEL = -1001283278354
+
 db = Database(DATABASE_URL, SESSION_NAME)
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
@@ -150,9 +148,7 @@ async def incoming_compress_message_f(bot, update):
                     bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
                     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-                    await bot.send_message(
-                                           f"**Download Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
-                                           parse_mode="markdown")
+                    
                     await download_start.delete()
                 except:
                     pass
@@ -173,24 +169,7 @@ async def incoming_compress_message_f(bot, update):
             )
         except:
             pass
-    else:
-        try:
-            await bot.send_message(
-               
-                text=Localisation.FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton('Show Bot Status', url=f'https://t.me/{LOG_CHANNEL}')
-                            # That's Username na ...
-                        ]
-                    ]
-                ),
-                reply_to_message_id=update.message_id
-            )
-        except:
-            pass
-        return
+    
 
     if os.path.exists(saved_file_path):
         downloaded_time = TimeFormatter((time.time() - d_start) * 1000)
