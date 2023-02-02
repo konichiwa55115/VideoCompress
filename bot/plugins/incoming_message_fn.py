@@ -70,26 +70,7 @@ async def incoming_start_message_f(bot, update):
                     disable_web_page_preview=True
                 )
                 return
-        except UserNotParticipant:
-            await message.reply_text(
-                text="**Please Join My Updates Channel to use this Bot!**",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
-                        ]
-                    ]
-                ),
-                parse_mode="markdown"
-            )
-            return
-        except Exception:
-            await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
-                parse_mode="markdown",
-                disable_web_page_preview=True
-            )
-            return
+       
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
