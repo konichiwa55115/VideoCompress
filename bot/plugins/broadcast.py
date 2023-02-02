@@ -11,7 +11,8 @@ import os
 from bot.database import Database
 from pyrogram import filters
 from pyrogram import Client
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 import aiofiles
 import aiofiles.os
